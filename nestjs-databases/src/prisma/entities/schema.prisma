@@ -1,0 +1,16 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+  // output   = "../../../node_modules/@prisma/client"
+}
+
+model Account {
+  id       Int @id
+  username String @db.VarChar(255)
+  password String @db.VarChar(255)
+  name     String @db.VarChar(255)
+}
